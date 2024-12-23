@@ -1,14 +1,18 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        while (len(s) > 0):
-            if ("()" in s):
-                s = s.replace("()","")
-            elif ("{}" in s):
-                s = s.replace("{}","")
-            elif ("[]" in s):
-                s = s.replace("[]","")
-            elif (len(s) > 0): return False
-        return True
+        stack = []
+        for c in s:
+            if (c in "{(["):
+                stack.append(c)
+            else:
+                if not stack or \
+                (c == "}" and stack[-1] != "{") or \
+                (c == ")" and stack[-1] != "(") or\
+                (c == "]" and stack[-1] != "["):
+                    return False
+                else:
+                    stack.pop()
+        return not stack
     
 parentheses = ""
 parentheses = input()
