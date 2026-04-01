@@ -1,7 +1,6 @@
 class Solution:
-    def mySqrt(self, x: int) -> int:
-        return int(x**0.5)
-
+    def climbStairs(self, n: int) -> int:
+        return n*n//2
 
 sol = Solution()
-print(sol.mySqrt(8))
+print(sol.climbStairs(3))
