@@ -1,6 +1,3 @@
 class Solution:
-    def climbStairs(self, n: int) -> int:
-        return n*n//2
-
-sol = Solution()
-print(sol.climbStairs(3))
+    def mySqrt(self, x: int) -> int:
+        return int(x**0.5)
